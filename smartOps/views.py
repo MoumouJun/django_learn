@@ -1,13 +1,14 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.http import HttpResponse
-
 from django.forms.models import model_to_dict
-import json
-
 from django.contrib.auth import authenticate
 
+from django.core.handlers.wsgi import WSGIRequest
+
+# Create your views here.
+
+import json
+from datetime import datetime
 
 ADMIN_NAME='trade'
 ADMIN_PASSWD=''
@@ -43,19 +44,22 @@ def chk_login(name, passwd) -> str:
         return None
 
 
-def so_render(request, html: str = ""):
+def so_render(request: WSGIRequest, html: str = ""):
+    '''前缀 so : SmartOps缩写'''
+    render_dict = {}
+    so_date_time= datetime.now()
+    render_dict['Copyright']=Copyright
+    render_dict['so_date_time']=so_date_time
+    render_dict['req_ip']=request.META['REMOTE_ADDR']
     if html=="":
         log_info("ERROR")
-    return render(request, html, {"Copyright": Copyright})
+    return render(request, html,render_dict)
 
 
-
-
-
-def login(request):
+def login(request: WSGIRequest):
     log_info(request)
     if request.method == 'GET':
-        return so_render(request,"user/login.html")
+        return so_render(request, "user/login.html")
 
     chk_rst = chk_login(request.POST['name'], request.POST['password'])
     if chk_rst != None:
@@ -70,7 +74,7 @@ def index(request):
 
 def welcome(request):
     log_info(str(request))
-    return render(request, 'welcome.html')
+    return so_render(request, 'index/welcome.html')
 
 
 # 知识点列表

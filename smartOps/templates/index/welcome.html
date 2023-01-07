@@ -1,0 +1,94 @@
+﻿{% extends 'base/base.html' %}
+
+{% block body %}
+
+<body>
+<title>欢迎使用SmartOps</title>
+<div class="page-container">
+	<p class="f-20 text-success">欢迎使用 智能运维平台 SmartOps<span class="f-14">_v1.0</span></p>
+	<p>登录次数：18 </p>
+	<p>当前登录IP：{{req_ip}}  当前登录时间：{{so_date_time}}</p>
+	<table class="table table-border table-bordered table-bg">
+		<thead>
+			<tr>
+				<th colspan="7" scope="col">平台信息统计</th>
+			</tr>
+			<tr class="text-c">
+				<th>统计</th>
+				<th>交易类别</th>
+				<th>交易子类</th>
+				<th>交易知识点</th>
+				<th>交易工具</th>
+				<th>场景</th>
+				<th>平台访问次数</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="text-c">
+				<td>总数</td>
+				<td>1</td>
+				<td>9</td>
+				<td>10</td>
+				<td>20</td>
+				<td>20</td>
+				<td>120</td>
+			</tr>
+			<tr class="text-c">
+				<td>今日</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr class="text-c">
+				<td>昨日</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr class="text-c">
+				<td>本周</td>
+				<td>2</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr class="text-c">
+				<td>本月</td>
+				<td>2</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table table-border table-bordered table-bg mt-20">
+		<thead>
+			<tr>
+				<th colspan="2" scope="col">贡献统计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th width="30%">root</th>
+				<td>100</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
+
+</body>
+
+{%endblock%}
