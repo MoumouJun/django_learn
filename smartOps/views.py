@@ -44,13 +44,15 @@ def chk_login(name, passwd) -> str:
         return None
 
 
-def so_render(request: WSGIRequest, html: str = ""):
+def so_render(request: WSGIRequest, html: str = "", rsq_dict: dict = {}):
     '''前缀 so : SmartOps缩写'''
     render_dict = {}
     so_date_time= datetime.now()
     render_dict['Copyright']=Copyright
     render_dict['so_date_time']=so_date_time
     render_dict['req_ip']=request.META['REMOTE_ADDR']
+    for k,v in rsq_dict.items():
+        render_dict[k] = v
     if html=="":
         log_info("ERROR")
     return render(request, html,render_dict)
@@ -63,7 +65,7 @@ def login(request: WSGIRequest):
 
     chk_rst = chk_login(request.POST['name'], request.POST['password'])
     if chk_rst != None:
-        return render(request, 'user/login.html', {'errmsg': chk_rst})
+        return so_render(request, 'user/login.html', {'errmsg': chk_rst})
 
     return index(request) 
 
@@ -90,3 +92,7 @@ def product_list(request):
         ["1", "2", '3', '4', '5', '6'],
     ]
     return render(request, 'product-list.html', {'l': l})
+
+
+def knowledge_list(request: WSGIRequest):
+    return so_render(request, 'knowledge/knowledge_list.html')
