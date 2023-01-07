@@ -1,16 +1,15 @@
 ﻿{% extends 'base/base.html' %}
-{% block name='header'%}{%endblock%}
-{% block name='menu'%}{%endblock%} 
 
 {% block body %}
 
 <body class="pos-r">
+<section class="Hui-article-box">
 <title>知识点列表</title>
-<div class="pos-a" style="width:200px;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
+<!-- <div class="pos-a" style="width:200px;left:0;top:0; bottom:0; height:100%; border-right:1px solid hsl(0, 81%, 43%); background-color:#f5f5f5; overflow:auto;">
 	<ul id="treeDemo" class="ztree"></ul>
-</div>
-<div style="margin-left:200px;">
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 产品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+</div> -->
+<!-- <div style="margin-left:200px;"> -->
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 知识点管理 <span class="c-gray en">&gt;</span> 知识点列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 	<div class="page-container">
 		<div class="text-c"> 日期范围：
 			<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate" style="width:120px;">
@@ -50,18 +49,14 @@
 		</div>
 	</div>
 </div>
+</section>
 
-<!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
-<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
-<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script> 
-<script type="text/javascript" src="lib/datatables/1.10.15/jquery.dataTables.min.js"></script> 
-<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="static/lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="static/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+<script type="text/javascript" src="static/lib/datatables/1.10.15/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="static/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 var setting = {
 	view: {
