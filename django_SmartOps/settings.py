@@ -75,10 +75,10 @@ WSGI_APPLICATION = 'django_SmartOps.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 
@@ -120,4 +120,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR+"/smartOps/templates/static"
+# STATIC_ROOT = BASE_DIR+"/smartOps/templates/static/"
+STATIC_ROOT = "/home/liujun/test/src/py/django_test/django_SmartOps/smartOps/templates/static/"
+
+
+STATICFILES_DIRS = [
+
+    "/home/liujun/test/src/py/django_test/django_SmartOps/smartOps/templates/static/lib"
+    "/home/liujun/test/src/py/django_test/django_SmartOps/smartOps/templates/static/temp"
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '/smartOps/media')

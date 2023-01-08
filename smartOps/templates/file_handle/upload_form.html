@@ -1,0 +1,11 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/temp/bootstrap.min.css">
+
+<form action="" method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{ form.as_p }}
+   <button class="btn btn-info form-control " type="submit" value="submit">点击上传</button>
+</form>
+
+
